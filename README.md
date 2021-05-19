@@ -15,7 +15,7 @@
 - has_many :category, through: category_users
 - has_many :video
 
-## category テーブル
+## categories テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
@@ -39,7 +39,7 @@
 - belongs_to :category
 - belongs_to :user
 
-## video テーブル
+## videos テーブル
 
 | Column      | Type       | Options     |
 | ----------- | ---------- | ----------- |
