@@ -1,24 +1,55 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+| name     | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :category_user
+- has_many :category, through: category_users
+- has_many :video
 
-* Configuration
+## category テーブル
 
-* Database creation
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_many :category_user
+- has_many :users, through: category_users
+- has_many :video
 
-* Services (job queues, cache servers, search engines, etc.)
+## category_users テーブル
 
-* Deployment instructions
+| Column | Type       | Options     |
+| ------ | ---------- | ----------- |
+| user   | references | null: false |
+| room   | references | null: false |
 
-* ...
+### Association
+
+- belongs_to :category
+- belongs_to :user
+
+## video テーブル
+
+| Column      | Type       | Options     |
+| ----------- | ---------- | ----------- |
+| name        | string     | null: false |
+| description | text       | null: false |
+| comment     | text       | null: false |
+| user        | references | null: false |
+| room        | references | null: false |
+
+### Association
+
+- belongs_to :category
+- belongs_to :user
