@@ -23,7 +23,7 @@
 .create-room a {
   font-size: 10px;
   border: 1px solid lightcoral;
-  padding: 14px;
+  padding: 12px;
   color: #ffffff;
   text-decoration: none;
 }
@@ -50,11 +50,33 @@
 .room-header {
   height: 60px;
   padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
 }
-.messages {
+
+.header-title {
+  color: #333;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.header-button {
+  margin-top: 20px;
+}
+
+.header-button a {
+  text-decoration: none;
+  border: 1px solid darkred;
+  color: darkred;
+  padding: 7px;
+}
+.movies {
   background-color: #FAFAFA;
   height: calc(100vh - 60px - 60px);
   padding: 46px 40px 0;
+}
+.movie-icon {
+  width: 23vw;
 }
 .form {
   background-color: #DDDDDD;
